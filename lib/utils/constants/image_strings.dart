@@ -1,7 +1,7 @@
 /* -- App Image Strings -- */
 
 /// This class contains all the App Images in String formats.
-class TImages {
+class EImages {
   // -- App Logos
   static const String darkAppLogo =
       "assets/logos/t-store-splash-logo-black.png";
@@ -60,11 +60,11 @@ class TImages {
 
   // -- OnBoarding Texts
   static const String onBoardingImage1 =
-      "assets/images/on_boarding_images/sammy-line-searching.gif";
+      "assets/images/on_boarding_images/onBoarding1.gif";
   static const String onBoardingImage2 =
-      "assets/images/on_boarding_images/sammy-line-shopping.gif";
+      "assets/images/on_boarding_images/onBoarding2.gif";
   static const String onBoardingImage3 =
-      "assets/images/on_boarding_images/sammy-line-delivery.gif";
+      "assets/images/on_boarding_images/onBoarding3.gif";
 
   // -- Products
   static const String productImage1 = "assets/images/products/nike-shoes.png";
