@@ -1,3 +1,5 @@
+import 'package:estore/common/eLoginDivider.dart';
+import 'package:estore/common/eSocialButtons.dart';
 import 'package:estore/features/authentication/screens/Signup/singup_screen.dart';
 import 'package:estore/utils/constants/image_strings.dart';
 import 'package:estore/utils/constants/sizes.dart';
@@ -33,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                   //App logo
                   Image.asset(
                     isDarkMode ? EImages.lightAppLogo : EImages.darkAppLogo,
-                    width: EHelperFunctions.screenWidth() * 0.3,
+                    width: EHelperFunctions.screenWidth() * 0.2,
                   ),
 
                   //Welcome back text
@@ -55,6 +57,8 @@ class LoginScreen extends StatelessWidget {
                   child: Column(
                 children: [
                   TextFormField(
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
                         label: Text(ETexts.email),
                         prefixIcon: Icon(Iconsax.direct_right)),
@@ -97,6 +101,10 @@ class LoginScreen extends StatelessWidget {
                   child: OutlinedButton(
                       onPressed: () => Get.to(() => const SignupScreen()),
                       child: const Text(ETexts.createAccount))),
+              const SizedBox(height: ESizes.spaceBtwSections),
+              ELoginDivider(isDarkMode: isDarkMode, title: ETexts.orSignInWith),
+              const SizedBox(height: ESizes.spaceBtwInputFields),
+              ESocialButtons(onTap1: () {}, onTap2: () {}),
             ],
           ),
         ),

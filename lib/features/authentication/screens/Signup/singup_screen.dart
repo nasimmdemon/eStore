@@ -1,3 +1,7 @@
+import 'package:estore/common/eLoginDivider.dart';
+import 'package:estore/common/eSocialButtons.dart';
+
+import 'package:estore/utils/constants/colors.dart';
 import 'package:estore/utils/constants/image_strings.dart';
 import 'package:estore/utils/constants/lottie_animations.dart';
 import 'package:estore/utils/constants/sizes.dart';
@@ -5,6 +9,7 @@ import 'package:estore/utils/constants/text_strings.dart';
 import 'package:estore/utils/device/device_utility.dart';
 import 'package:estore/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
@@ -35,7 +40,7 @@ class SignupScreen extends StatelessWidget {
                   //Lottie Animation
                   Image.asset(
                     isDarkMode ? EImages.lightAppLogo : EImages.darkAppLogo,
-                    width: EHelperFunctions.screenWidth() * 0.3,
+                    width: EHelperFunctions.screenWidth() * 0.2,
                   ),
                   const SizedBox(
                     height: 10,
@@ -58,23 +63,35 @@ class SignupScreen extends StatelessWidget {
               Form(
                   child: Column(
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                        label: Text(ETexts.firstName),
-                        prefixIcon: Icon(Iconsax.text)),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          textInputAction: TextInputAction.next,
+                          expands: false,
+                          decoration: const InputDecoration(
+                              label: Text(ETexts.firstName),
+                              prefixIcon: Icon(Iconsax.text)),
+                        ),
+                      ),
+                      const SizedBox(width: ESizes.spaceBtwInputFields),
+                      Expanded(
+                        child: TextFormField(
+                          textInputAction: TextInputAction.next,
+                          expands: false,
+                          decoration: const InputDecoration(
+                              label: Text(ETexts.lastName),
+                              prefixIcon: Icon(Iconsax.text)),
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(
                     height: ESizes.spaceBtwInputFields,
                   ),
                   TextFormField(
-                    decoration: const InputDecoration(
-                        label: Text(ETexts.lastName),
-                        prefixIcon: Icon(Iconsax.text)),
-                  ),
-                  const SizedBox(
-                    height: ESizes.spaceBtwInputFields,
-                  ),
-                  TextFormField(
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
                         label: Text(ETexts.email),
                         prefixIcon: Icon(Iconsax.direct_right)),
@@ -83,8 +100,20 @@ class SignupScreen extends StatelessWidget {
                     height: ESizes.spaceBtwInputFields,
                   ),
                   TextFormField(
+                    textInputAction: TextInputAction.next,
                     decoration: const InputDecoration(
-                      label: Text(ETexts.password),
+                      label: Text(ETexts.newPassword),
+                      prefixIcon: Icon(Iconsax.password_check),
+                      suffixIcon: Icon(Iconsax.eye_slash),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: ESizes.spaceBtwInputFields,
+                  ),
+                  TextFormField(
+                    textInputAction: TextInputAction.done,
+                    decoration: const InputDecoration(
+                      label: Text(ETexts.confirmNewPassword),
                       prefixIcon: Icon(Iconsax.password_check),
                       suffixIcon: Icon(Iconsax.eye_slash),
                     ),
@@ -97,12 +126,23 @@ class SignupScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () {}, child: const Text(ETexts.signUp))),
-              const SizedBox(height: ESizes.defaultSpace),
+              const SizedBox(height: ESizes.spaceBtwInputFields),
               const Text(ETexts.alreadyhaveanaccount),
               SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
                       onPressed: () {}, child: const Text(ETexts.login))),
+              const SizedBox(height: ESizes.spaceBtwInputFields),
+
+              //Divider
+              ELoginDivider(
+                isDarkMode: isDarkMode,
+                title: ETexts.orSignUpWith,
+              ),
+              const SizedBox(height: ESizes.spaceBtwInputFields),
+              //Social Buttons
+              ESocialButtons(onTap1: () {}, onTap2: () {}),
+              //Divider ends
             ],
           ),
         ),
