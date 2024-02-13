@@ -7,7 +7,6 @@ import 'package:estore/utils/constants/sizes.dart';
 import 'package:estore/utils/device/device_utility.dart';
 import 'package:estore/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:estore/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/text_strings.dart';

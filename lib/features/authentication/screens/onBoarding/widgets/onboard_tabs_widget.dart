@@ -1,5 +1,3 @@
-import 'package:estore/utils/constants/lottie_animations.dart';
-import 'package:estore/utils/device/device_utility.dart';
 import 'package:estore/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';

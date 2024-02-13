@@ -7,6 +7,9 @@ class ETexts {
   static const String submit = "Submit";
   static const String appName = "E-Store";
   static const String tContinue = "Continue";
+  static const String signUp = "Sign Up";
+  static const String login = "Login";
+  static const String alreadyhaveanaccount = "Already have an account?";
 
   // -- OnBoarding Texts
   static const String onBoardingTitle1 = "Welcome to E-Store";

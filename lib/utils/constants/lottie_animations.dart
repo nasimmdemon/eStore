@@ -5,4 +5,6 @@ class ELottieAnimations {
       "assets/images/on_boarding_images/onBoarding2.json";
   static const onBoardingLottie3 =
       "assets/images/on_boarding_images/onBoarding3.json";
+  static const signupAnimation =
+      "assets/images/animations/sign_up_animation.json";
 }
