@@ -7,4 +7,6 @@ class ELottieAnimations {
       "assets/images/on_boarding_images/onBoarding3.json";
   static const signupAnimation =
       "assets/images/animations/sign_up_animation.json";
+  static const verifyEmail = "assets/images/animations/verify_email.json";
+  static const success = "assets/images/animations/success.json";
 }

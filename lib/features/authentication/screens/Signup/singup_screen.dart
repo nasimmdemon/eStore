@@ -1,5 +1,6 @@
 import 'package:estore/common/eLoginDivider.dart';
 import 'package:estore/common/eSocialButtons.dart';
+import 'package:estore/features/authentication/screens/Signup/verify_email/verify_email_screen.dart';
 
 import 'package:estore/utils/constants/colors.dart';
 import 'package:estore/utils/constants/image_strings.dart';
@@ -9,6 +10,7 @@ import 'package:estore/utils/constants/text_strings.dart';
 import 'package:estore/utils/device/device_utility.dart';
 import 'package:estore/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/get_utils.dart';
 
 import 'package:iconsax/iconsax.dart';
@@ -125,7 +127,10 @@ class SignupScreen extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {}, child: const Text(ETexts.signUp))),
+                      onPressed: () {
+                        Get.to(() => const VerifyEmailScreen());
+                      },
+                      child: const Text(ETexts.signUp))),
               const SizedBox(height: ESizes.spaceBtwInputFields),
               const Text(ETexts.alreadyhaveanaccount),
               SizedBox(
